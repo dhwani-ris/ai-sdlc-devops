@@ -133,9 +133,10 @@
     <!-- WHAT WE'RE BUILDING -->
     <section class="band band--alt" id="assistants">
       <div class="container">
-        <p class="kicker">03 · What we're building</p>
+        <p class="kicker">03 · What we shipped</p>
         <h2>Five AI assistants. One unified process.</h2>
         <p class="sub">Each role gets a packaged AI assistant — a tested set of prompts, skills, and review rules — so nobody starts from scratch on a new project.</p>
+        <p class="sub"><strong>Live on <a href="https://github.com/dhwani-ris">github.com/dhwani-ris</a></strong> as of 2026-05-17 · v0.1.0 / v0.2.0 across 9 repos.</p>
 
         <div class="assistants">
           <article class="assistant">
@@ -143,7 +144,7 @@
             <h3>Client Conversation Assistant</h3>
             <p><strong>What it does:</strong> Helps the AM capture client intent, run discovery, draft the charter, and keep scope under control through the project.</p>
             <p><strong>What stakeholders see:</strong> Faster sign-offs. Fewer "that's not what I meant" moments later.</p>
-            <p class="assistant__repo">Repos · <code>service-am-plugin</code> · <code>product-am-plugin</code> <em>(one per department)</em></p>
+            <p class="assistant__repo">Repos · <a href="https://github.com/dhwani-ris/service-am-plugin"><code>service-am-plugin</code></a> · <a href="https://github.com/dhwani-ris/product-am-plugin"><code>product-am-plugin</code></a> <em>(one per department · v0.1.0 live)</em></p>
           </article>
 
           <article class="assistant">
@@ -151,7 +152,7 @@
             <h3>Architecture Assistant</h3>
             <p><strong>What it does:</strong> Reviews technical designs against Dhwani's reference patterns. Catches drift before it ships.</p>
             <p><strong>What stakeholders see:</strong> Consistent quality across projects. No rogue architectures.</p>
-            <p class="assistant__repo">Repos · <code>service-architect-plugin</code> · <code>product-architect-plugin</code> <em>(one per department)</em></p>
+            <p class="assistant__repo">Repos · <a href="https://github.com/dhwani-ris/service-architect-plugin"><code>service-architect-plugin</code></a> · <a href="https://github.com/dhwani-ris/product-architect-plugin"><code>product-architect-plugin</code></a> <em>(one per department · v0.2.0 live · 9 lifecycle skills each)</em></p>
           </article>
 
           <article class="assistant">
@@ -159,7 +160,7 @@
             <h3>Code Building Assistant</h3>
             <p><strong>What it does:</strong> Writes code with AI — but enforces tests-first, documentation-alongside, and proper review before merge.</p>
             <p><strong>What stakeholders see:</strong> Faster delivery without the quality drops you'd normally expect from speed.</p>
-            <p class="assistant__repo">Repos · <code>service-builder-plugin</code> · <code>product-builder-plugin</code> <em>(one per department)</em></p>
+            <p class="assistant__repo">Repos · <a href="https://github.com/dhwani-ris/service-builder-plugin"><code>service-builder-plugin</code></a> · <a href="https://github.com/dhwani-ris/product-builder-plugin"><code>product-builder-plugin</code></a> <em>(one per department · v0.1.0 live · 4 sub-personas + 5 skills each)</em></p>
           </article>
 
           <article class="assistant assistant--ours">
@@ -167,7 +168,7 @@
             <h3>Quality &amp; Delivery Assistant</h3>
             <p><strong>What it does:</strong> Runs security scans, load tests, and the pre-release checklist automatically. Releases ship with a signed report.</p>
             <p><strong>What stakeholders see:</strong> No surprises in production. Every release has evidence.</p>
-            <p class="assistant__repo">Repo · <code>ai-sdlc-devops-plugin</code> <em>(shared)</em></p>
+            <p class="assistant__repo">Repo · <a href="https://github.com/dhwani-ris/ai-sdlc-devops-plugin"><code>ai-sdlc-devops-plugin</code></a> <em>(shared · v0.1.0 live · surface 1 of 2)</em></p>
           </article>
 
           <article class="assistant assistant--ours">
@@ -175,23 +176,23 @@
             <h3>Production Monitoring Assistant</h3>
             <p><strong>What it does:</strong> Watches every live application — uptime, performance, security. Sends weekly health reports automatically.</p>
             <p><strong>What stakeholders see:</strong> Issues caught before clients call. Monthly reports in their inbox.</p>
-            <p class="assistant__repo">Repo · <code>ai-sdlc-devops-plugin</code> <em>(shared)</em></p>
+            <p class="assistant__repo">Repo · <a href="https://github.com/dhwani-ris/ai-sdlc-devops-plugin"><code>ai-sdlc-devops-plugin</code></a> <em>(shared · v0.1.0 live · surface 2 of 2)</em></p>
           </article>
         </div>
 
         <h3 class="sub-h3">Shared infrastructure</h3>
         <div class="shared-repos">
           <article class="shared-repo">
-            <h4><code>ai-sdlc-skills</code></h4>
+            <h4><a href="https://github.com/dhwani-ris/ai-sdlc-skills"><code>ai-sdlc-skills</code></a> <em>· v0.1.0 live</em></h4>
             <p>Central library of AI prompts and skills. Every assistant pulls from here. Semver-tagged with built-in tests.</p>
           </article>
           <article class="shared-repo">
-            <h4><code>ai-sdlc-hub</code></h4>
+            <h4><a href="https://github.com/dhwani-ris/ai-sdlc-hub"><code>ai-sdlc-hub</code></a> <em>· v0.1.0 live</em></h4>
             <p>Single onboarding site. SOPs, plugin docs, role guides. One URL anyone in the team lands on.</p>
           </article>
         </div>
 
-        <p class="caveat"><strong>Nine repos total.</strong> Each persona-facing assistant (AM, Architect, Builder) ships as two repos — one per department (<code>service-*</code> and <code>product-*</code>) — so each department can tune its plugin without colliding. The DevOps plugin is shared across departments. Plus the two shared infrastructure repos.</p>
+        <p class="caveat"><strong>Nine repos total — all live on <a href="https://github.com/dhwani-ris">github.com/dhwani-ris</a></strong>. Each persona-facing assistant (AM, Architect, Builder) ships as two repos — one per department (<code>service-*</code> and <code>product-*</code>) — so each department can tune its plugin without colliding. The DevOps plugin is shared across departments. Plus the two shared infrastructure repos.</p>
       </div>
     </section>
 
