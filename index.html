@@ -27,6 +27,7 @@
         <a href="#complete">Complete view</a>
         <a href="#inside">Plugin internals</a>
         <a href="#journey">Journey</a>
+        <a href="#devops-charter">DevOps charter</a>
         <a href="quick.html" class="bar__cta">Slides →</a>
       </nav>
     </div>
@@ -40,7 +41,7 @@
         <p class="kicker">Dhwani RIS · AI-SDLC</p>
         <h1>From a client's idea<br/>to a working product,<br/><span class="accent">in weeks.</span></h1>
         <p class="lede">An end-to-end process for building social-impact software with AI — from the first client conversation to the weekly health report years later.</p>
-        <p class="hero__meta">Prepared by Dhwani RIS · v1.2 · 2026-05-15 · For the AI-SDLC closing session</p>
+        <p class="hero__meta">Prepared by Dhwani RIS · v1.3 · 2026-05-26 · DevOps contract added (§10)</p>
       </div>
     </section>
 
@@ -457,9 +458,9 @@
             <div class="flow-step__main">
               <h3>Pre-go-live checks</h3>
               <p class="flow-step__meta"><strong>DevOps + Security</strong> · using the <em>Quality &amp; Delivery Assistant</em></p>
-              <p>Security scans, penetration test, load test, performance baseline, end-to-end test finalisation. All auto-generated. SLOs confirmed.</p>
+              <p>The seven mandatory assessments — VAPT · SAST · DAST · PENTEST · E2E · performance baseline · load test. All auto-generated. SLOs confirmed. <strong>Critical + High = zero before go-live (hard fail).</strong> Medium = exception only with written ETA from priority lead. See <a href="#devops-charter">the DevOps contract (§10)</a> for the full severity rules.</p>
             </div>
-            <p class="flow-step__gate">Gate · Every check green · Release Readiness Report signed</p>
+            <p class="flow-step__gate">Gate · All seven assessments green · Release Readiness Report signed by DevOps (twice)</p>
           </article>
 
           <article class="flow-step flow-step--ours">
@@ -529,8 +530,8 @@
             <h3>ai-sdlc-devops-plugin</h3>
             <p><strong>Two surfaces inside the same plugin:</strong></p>
             <ul class="plugin-list">
-              <li><strong>Quality &amp; Delivery</strong> · VAPT · SAST · PenT · E2E finalisation · load · performance reports — all auto-generated · SLOs confirmed</li>
-              <li><strong>Production Monitoring</strong> · weekly health · CPU &lt; 50% check every 7 days · 3-tier alert escalation · auto scale on 3rd critical · weekly + monthly reports</li>
+              <li><strong>Quality &amp; Delivery</strong> · the seven-assessment gate (VAPT · SAST · DAST · PENTEST · E2E · performance · load) · two DevOps sign-offs (mid-build + final pre-prod) · Critical/High severity hard-block · Kotwal KB inheritance — see <a href="#devops-charter">§10 The DevOps contract</a></li>
+              <li><strong>Production Monitoring</strong> · weekly per-app health report (uptime, latency, error budget, new CVEs in deps) · continuous repo scanning (SCA + secrets + OSS licence) · CPU &lt; 50% check every 7 days · 3-tier alert escalation · auto scale on 3rd critical</li>
             </ul>
             <p><strong>Main commands:</strong> <code>claude /pre-go-live</code> · <code>claude /monitor</code></p>
           </article>
@@ -591,7 +592,7 @@
             <span class="env__n">⑤</span>
             <h3>Pre-go-live gate · DevOps plugin</h3>
             <p><strong>Triggered by:</strong> DevOps, when UAT (or dev) signs off.</p>
-            <p>The Quality &amp; Delivery Assistant runs every check: VAPT · SAST · PenT · E2E finalisation · load test · performance reports. SLOs confirmed against the Sol Doc. <strong>If any check fails, the gate stays shut — no production deploy.</strong></p>
+            <p>The Quality &amp; Delivery Assistant runs all seven assessments: VAPT · SAST · DAST · PENTEST · E2E · performance baseline · load test. SLOs confirmed against the Sol Doc. <strong>Critical + High findings = zero before go-live (no exception). Mediums need a written ETA owned by the priority lead.</strong> See <a href="#devops-charter">§10 The DevOps contract</a> for the full rules.</p>
           </article>
 
           <article class="env env--prod">
@@ -603,6 +604,122 @@
         </div>
 
         <p class="caveat">The journey is the same on every project. <em>Depth</em> changes — a 5-day fit-gap might collapse Stages ③ + ④ into one merge, while a regulated government project may add a compliance gate between ⑤ and ⑥. The six environments stay constant.</p>
+      </div>
+    </section>
+
+    <!-- DEVOPS CHARTER -->
+    <section class="band band--alt" id="devops-charter">
+      <div class="container">
+        <p class="kicker">10 · The DevOps contract</p>
+        <h2>DevOps isn't a phase. It's a contract across all of them.</h2>
+        <p class="sub">Every other assistant runs <em>in</em> a phase. DevOps runs <em>across</em> them — three streams that bind the lifecycle together, two sign-offs that gate production, and one severity rule that has no exceptions.</p>
+
+        <h3 class="sub-h3">Three streams, every phase</h3>
+        <div class="process">
+          <article class="process-step">
+            <p class="process-step__n">01</p>
+            <h3>Build-time · AI-leveraged code quality</h3>
+            <p>Dhwani's <strong>zero-bug non-negotiable</strong> standard is enforced <em>while code is being written</em>, not at the gate. AI agents review every PR against the standard, catch defects at write-time, and refuse merges that don't clear the bar.</p>
+            <p class="process-step__time">Active from the first AI prompt to the final merge</p>
+          </article>
+          <article class="process-step">
+            <p class="process-step__n">02</p>
+            <h3>Pre-prod · The seven-assessment gate</h3>
+            <p>Seven assessments. All mandatory. <strong>Two DevOps sign-offs</strong> — one mid-build validation, one final pre-prod validation. Without both, the production deploy doesn't happen.</p>
+            <p class="process-step__time">Between UAT sign-off and Go-Live</p>
+          </article>
+          <article class="process-step process-step--accent">
+            <p class="process-step__n">03</p>
+            <h3>Post-prod · Continuous gate</h3>
+            <p>Continuous repo scanning (SCA · OSS licence · secrets · dependency CVEs) plus a <strong>weekly per-app health report</strong> — same template, every app, automatically generated and routed to the project owner.</p>
+            <p class="process-step__time">From Go-Live forever</p>
+          </article>
+        </div>
+
+        <h3 class="sub-h3">The seven assessments</h3>
+        <div class="full-flow">
+          <article class="flow-step">
+            <span class="flow-step__n">①</span>
+            <div class="flow-step__main">
+              <h3>VAPT — Vulnerability Assessment &amp; Pentesting</h3>
+              <p>Driven by the <strong>Kotwal knowledge base</strong> — Dhwani's structured DB of historical VAPT findings, wrapped as an MCP server so the Quality &amp; Delivery Assistant inherits a decade of pattern knowledge. Every new scan is informed by every finding before it.</p>
+            </div>
+          </article>
+          <article class="flow-step">
+            <span class="flow-step__n">②</span>
+            <div class="flow-step__main">
+              <h3>SAST — Static code scanning</h3>
+              <p>Semgrep / Snyk rulesets in CI. Runs on every PR. Critical + High findings hard-block the merge — no override, no exception path.</p>
+            </div>
+          </article>
+          <article class="flow-step">
+            <span class="flow-step__n">③</span>
+            <div class="flow-step__main">
+              <h3>DAST — Running-app scanning</h3>
+              <p>Dynamic scan against the staging deployment. Catches misconfigurations and runtime issues that static analysis can't see.</p>
+            </div>
+          </article>
+          <article class="flow-step">
+            <span class="flow-step__n">④</span>
+            <div class="flow-step__main">
+              <h3>PENTEST — Manual red-team round</h3>
+              <p>Security team runs targeted attacks against the staged build. Findings logged into Kotwal so the next project's automated scan inherits them.</p>
+            </div>
+          </article>
+          <article class="flow-step">
+            <span class="flow-step__n">⑤</span>
+            <div class="flow-step__main">
+              <h3>E2E — End-to-end test finalisation</h3>
+              <p>The QA sub-persona's E2E suite runs against staging. All critical user journeys green. No skipped or flaky tests carried into prod.</p>
+            </div>
+          </article>
+          <article class="flow-step">
+            <span class="flow-step__n">⑥</span>
+            <div class="flow-step__main">
+              <h3>Performance baseline</h3>
+              <p>p50 / p95 / p99 latency captured against the Sol Doc's SLO targets. Regressions vs. the previous release flagged.</p>
+            </div>
+          </article>
+          <article class="flow-step">
+            <span class="flow-step__n">⑦</span>
+            <div class="flow-step__main">
+              <h3>Load test</h3>
+              <p>Sustained-load scenarios at the SLO's target concurrency. Auto-scale behaviour verified. Failure modes documented in the readiness report.</p>
+            </div>
+          </article>
+        </div>
+        <p class="caveat">Project type can add more — accessibility audits for client-facing portals, OWASP API checks for mobile back-ends, compliance scans for regulated work. <em>Seven is the floor, not the ceiling.</em></p>
+
+        <h3 class="sub-h3">Severity rules · no negotiation</h3>
+        <div class="assistants">
+          <article class="assistant assistant--ours">
+            <p class="assistant__role">Critical + High</p>
+            <h3>Zero before go-live. Hard fail.</h3>
+            <p><strong>No exception path. No override.</strong> Every Critical and High finding from every assessment must be remediated and re-scanned green before the production deploy unlocks. The Quality &amp; Delivery Assistant blocks the Go-Live command if any remain.</p>
+          </article>
+          <article class="assistant assistant--ours">
+            <p class="assistant__role">Medium</p>
+            <h3>Exception allowed — with a written ETA.</h3>
+            <p>Medium findings can ship to prod <em>only</em> with a written ETA for remediation, owned by the team's priority lead, logged against the project in the tracker. No ETA = no ship. Open Mediums past their ETA show up in the weekly health report until closed.</p>
+          </article>
+          <article class="assistant">
+            <p class="assistant__role">Low + Informational</p>
+            <h3>Logged, batched, prioritised quarterly.</h3>
+            <p>Tracked in the repo's security backlog. Reviewed at the quarterly portfolio sync. Not a release blocker on their own, but a repeat-offender pattern across releases is itself a finding.</p>
+          </article>
+        </div>
+
+        <h3 class="sub-h3">Eligibility · the policy lever</h3>
+        <div class="shared-repos">
+          <article class="shared-repo">
+            <h4>AI-SDLC conformance is the entry ticket</h4>
+            <p>The DevOps gate services — assessments, sign-offs, monitoring, weekly reports — are <strong>available only to projects that ran through the AI-SDLC framework</strong>: Charter signed in the AM plugin, Tech Spec signed via the Architect plugin, build done with the Builder plugin's four sub-personas. Skip the framework, and the gate doesn't open. <em>This is the policy stick that makes the framework real.</em></p>
+          </article>
+          <article class="shared-repo">
+            <h4>Kotwal · the knowledge backbone</h4>
+            <p>Every finding from every assessment, on every project Dhwani has shipped, lives in the Kotwal knowledge base. Wrapped as an MCP server, queried by the Quality &amp; Delivery Assistant at scan time. <strong>The next project's first scan starts where the last project's last scan finished.</strong></p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -625,7 +742,7 @@
     <footer class="foot">
       <div class="container">
         <p><strong>Dhwani RIS</strong> · Empowering Social Impact Through Technology</p>
-        <p class="foot__meta">How Dhwani builds software with AI · v1.2 · 2026-05-15 · Prepared by Dhwani RIS</p>
+        <p class="foot__meta">How Dhwani builds software with AI · v1.3 · 2026-05-26 · Prepared by Dhwani RIS</p>
       </div>
     </footer>
 
