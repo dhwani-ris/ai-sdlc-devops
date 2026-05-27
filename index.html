@@ -23,6 +23,7 @@
         <a href="#process">Lifecycle</a>
         <a href="#practices">Practices</a>
         <a href="#workflows">Workflows</a>
+        <a href="#environments">Environments</a>
         <a href="#compliance">Compliance</a>
         <a href="#devops-charter">Contract</a>
         <a href="quick.html" class="bar__cta">Slides →</a>
@@ -38,7 +39,7 @@
         <p class="kicker">Dhwani RIS · DevOps</p>
         <h1>Every project.<br/>The same checks.<br/><span class="accent">Provably compliant.</span></h1>
         <p class="lede">How DevOps keeps every Dhwani application secure, performant, and production-ready — the practices we run, the workflows that fire on every repo, and how each project is proven Dhwani-compliant before it ships.</p>
-        <p class="hero__meta">Prepared by Dhwani RIS DevOps · v2.0 · 2026-05-27 · Practices · Workflows · Compliance · Contract</p>
+        <p class="hero__meta">Prepared by Dhwani RIS DevOps · v2.1 · 2026-05-27 · Practices · Workflows · Environments · Compliance · Contract</p>
       </div>
     </section>
 
@@ -221,10 +222,139 @@
       </div>
     </section>
 
-    <!-- COMPLIANCE -->
-    <section class="band" id="compliance">
+    <!-- ENVIRONMENTS & PROVISIONING -->
+    <section class="band" id="environments">
       <div class="container">
-        <p class="kicker kicker--dark">04 · Per-project assessment &amp; compliance</p>
+        <p class="kicker kicker--dark">04 · Environments &amp; provisioning</p>
+        <h2>Four environments. Each one provisioned, not improvised.</h2>
+        <p class="sub">Every project moves through the same four environments, in order. Each is provisioned by DevOps with a defined trigger, a fixed set of infrastructure, and its own hardening — so a 5-day fit-gap and a 4-week greenfield travel the identical path, just at different depth.</p>
+
+        <div class="env-lifecycle">
+
+          <article class="env-stage is-repo">
+            <span class="env-marker" aria-hidden="true">01</span>
+            <div class="env-body">
+              <div class="env-body__head">
+                <h3>Repo creation</h3>
+                <span class="env-url">github.com/dhwani-{stack}-{client}</span>
+              </div>
+              <p class="env-body__lead">One command scaffolds a fully-wired repository — the check suite is present before the first line of code.</p>
+              <dl class="env-detail">
+                <div>
+                  <dt>Triggered by</dt>
+                  <dd>Product Builder (or AM on solo projects) runs <code>gh repo create … --template ai-sdlc-stage-a-starter</code></dd>
+                </div>
+                <div>
+                  <dt>What's provisioned</dt>
+                  <dd>Folder structure · schemas · CI seed workflows · Pages → CloudFront · the <code>.claude/</code> catalogue</dd>
+                </div>
+                <div>
+                  <dt>DevOps hardening</dt>
+                  <dd>Pre-commit hooks, secret scanning, branch protection, and the PR quality/security workflow are present from commit zero</dd>
+                </div>
+                <div>
+                  <dt>Outcome</dt>
+                  <dd><strong>Repo ready</strong> — the first AI prompt is executable immediately, on compliant rails</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="env-stage is-dev">
+            <span class="env-marker" aria-hidden="true">02</span>
+            <div class="env-body">
+              <div class="env-body__head">
+                <h3>Dev environment</h3>
+                <span class="env-url">{project}-dev.dhwaniris.in</span>
+              </div>
+              <p class="env-body__lead">Auto-provisioned the moment the repo exists; redeployed on every merge.</p>
+              <dl class="env-detail">
+                <div>
+                  <dt>Triggered by</dt>
+                  <dd>Automatic on repo creation; redeploys on every merge to the <code>development</code> branch</dd>
+                </div>
+                <div>
+                  <dt>What's provisioned</dt>
+                  <dd>Dev compute via Terraform · auto-deploy pipeline · seeded monitoring · continuous regression runner</dd>
+                </div>
+                <div>
+                  <dt>DevOps hardening</dt>
+                  <dd>Isolated network · <strong>no production data</strong> · synthetic fixtures only</dd>
+                </div>
+                <div>
+                  <dt>Outcome</dt>
+                  <dd><strong>A dev URL that updates on every merge</strong> — the team and client watch the product take shape; regression runs continuously</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="env-stage is-uat">
+            <span class="env-marker" aria-hidden="true">03</span>
+            <div class="env-body">
+              <div class="env-body__head">
+                <h3>UAT environment</h3>
+                <span class="env-url">{project}-uat.dhwaniris.in</span>
+              </div>
+              <p class="env-body__lead">Provisioned when dev passes regression and the client is ready to validate.</p>
+              <dl class="env-detail">
+                <div>
+                  <dt>Triggered by</dt>
+                  <dd>AM, after dev passes regression — often optional on small projects, where staging serves as the preview</dd>
+                </div>
+                <div>
+                  <dt>What's provisioned</dt>
+                  <dd>Isolated UAT infra · named-approver access · PII-free seed data · UAT-specific monitoring</dd>
+                </div>
+                <div>
+                  <dt>DevOps hardening</dt>
+                  <dd>Access restricted to named approvers · PII masked · data export disabled for non-privileged roles</dd>
+                </div>
+                <div>
+                  <dt>Outcome</dt>
+                  <dd><strong>Client validates against the original intent</strong> — UAT sign-off captured before the gate runs</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="env-stage is-prod">
+            <span class="env-marker" aria-hidden="true">04</span>
+            <div class="env-body">
+              <div class="env-body__head">
+                <h3>Production environment</h3>
+                <span class="env-url">{project}.dhwaniris.in</span>
+              </div>
+              <p class="env-body__lead">Provisioned only after the seven-assessment gate passes and DevOps + AM sign Go-Live.</p>
+              <dl class="env-detail">
+                <div>
+                  <dt>Triggered by</dt>
+                  <dd>Pre-go-live gate green · two DevOps sign-offs · AM Go-Live approval</dd>
+                </div>
+                <div>
+                  <dt>What's provisioned</dt>
+                  <dd>Prod compute (blue-green) · DNS · valid SSL · backups + restore test · auto-scale · full metrics/logs/traces stack</dd>
+                </div>
+                <div>
+                  <dt>DevOps hardening</dt>
+                  <dd>HTTPS enforced · firewall rules reviewed · admin IP allowlist · 30-min heightened post-deploy monitoring · rollback rehearsed</dd>
+                </div>
+                <div class="env-detail__wide">
+                  <dt>Outcome</dt>
+                  <dd><strong>Live, monitored, and on the continuous post-prod schedule</strong> — re-scanned and re-reported for the life of the application (see §03 · the continuous workflow)</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPLIANCE -->
+    <section class="band band--alt" id="compliance">
+      <div class="container">
+        <p class="kicker kicker--dark">05 · Per-project assessment &amp; compliance</p>
         <h2>"Dhwani-compliant" is a checklist, not a claim.</h2>
         <p class="sub">Because every repo runs the identical workflow bundle, every project is held to the same bar — and the proof lives in the workflow logs. Here's what compliant concretely means, and the lever that enforces it.</p>
 
@@ -251,9 +381,9 @@
     </section>
 
     <!-- DEVOPS CHARTER -->
-    <section class="band band--alt" id="devops-charter">
+    <section class="band" id="devops-charter">
       <div class="container">
-        <p class="kicker">05 · The DevOps contract</p>
+        <p class="kicker">06 · The DevOps contract</p>
         <h2>DevOps isn't a phase. It's a contract across all of them.</h2>
         <p class="sub">The practices, workflows, and compliance checklist above all rest on one contract — three streams that bind the lifecycle together, two sign-offs that gate production, and one severity rule that has no exceptions.</p>
 
@@ -379,7 +509,7 @@
     <footer class="foot">
       <div class="container">
         <p><strong>Dhwani RIS</strong> · Empowering Social Impact Through Technology</p>
-        <p class="foot__meta">Dhwani RIS DevOps · Practices · Workflows · Compliance · v2.0 · 2026-05-27</p>
+        <p class="foot__meta">Dhwani RIS DevOps · Practices · Workflows · Environments · Compliance · v2.1 · 2026-05-27</p>
       </div>
     </footer>
 
