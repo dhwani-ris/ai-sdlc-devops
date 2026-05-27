@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>How Dhwani RIS builds software with AI</title>
-  <meta name="description" content="An end-to-end process for building software with AI at Dhwani RIS — from a client's first idea to weekly health reports in production." />
+  <title>Dhwani RIS · DevOps — Practices, Workflows &amp; Compliance</title>
+  <meta name="description" content="How DevOps keeps every Dhwani RIS application secure, performant, and production-ready — the practices, the workflows that run on every repo, and how each project is proven Dhwani-compliant before it ships." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -20,14 +20,11 @@
         <span>Dhwani RIS · AI-SDLC</span>
       </a>
       <nav class="bar__nav" aria-label="Primary">
-        <a href="#process">Process</a>
-        <a href="#team">Team</a>
-        <a href="#assistants">Assistants</a>
-        <a href="#client-flow">User flow</a>
-        <a href="#complete">Complete view</a>
-        <a href="#inside">Plugin internals</a>
-        <a href="#journey">Journey</a>
-        <a href="#devops-charter">DevOps charter</a>
+        <a href="#process">Lifecycle</a>
+        <a href="#practices">Practices</a>
+        <a href="#workflows">Workflows</a>
+        <a href="#compliance">Compliance</a>
+        <a href="#devops-charter">Contract</a>
         <a href="quick.html" class="bar__cta">Slides →</a>
       </nav>
     </div>
@@ -38,581 +35,227 @@
     <!-- HERO -->
     <section class="hero" id="top">
       <div class="container">
-        <p class="kicker">Dhwani RIS · AI-SDLC</p>
-        <h1>From a client's idea<br/>to a working product,<br/><span class="accent">in weeks.</span></h1>
-        <p class="lede">An end-to-end process for building social-impact software with AI — from the first client conversation to the weekly health report years later.</p>
-        <p class="hero__meta">Prepared by Dhwani RIS · v1.4 · 2026-05-27 · DevOps contract (§10) — bespoke visual build</p>
+        <p class="kicker">Dhwani RIS · DevOps</p>
+        <h1>Every project.<br/>The same checks.<br/><span class="accent">Provably compliant.</span></h1>
+        <p class="lede">How DevOps keeps every Dhwani application secure, performant, and production-ready — the practices we run, the workflows that fire on every repo, and how each project is proven Dhwani-compliant before it ships.</p>
+        <p class="hero__meta">Prepared by Dhwani RIS DevOps · v2.0 · 2026-05-27 · Practices · Workflows · Compliance · Contract</p>
       </div>
     </section>
 
-    <!-- HOW IT WORKS -->
+    <!-- WHERE DEVOPS SITS -->
     <section class="band band--alt" id="process">
       <div class="container">
-        <p class="kicker">01 · How it works</p>
-        <h2>Four steps. Every project. Same shape.</h2>
-        <p class="sub">The process is the same whether a project takes a week or a quarter. What changes is depth — not direction.</p>
+        <p class="kicker">01 · Where DevOps sits</p>
+        <h2>DevOps doesn't own a phase. It guards every one.</h2>
+        <p class="sub">The lifecycle has four steps. The two highlighted below are DevOps-owned end-to-end — but DevOps checks fire across all four, because compliance isn't a stage you reach, it's a state you hold.</p>
 
         <div class="process">
           <article class="process-step">
             <p class="process-step__n">01</p>
             <h3>Understand</h3>
-            <p>Capture the client's real intent. Define scope. Mock up the solution. Get sign-off before any code is written.</p>
-            <p class="process-step__time">1–4 weeks · scaled to project size</p>
+            <p>Intent, scope, sign-off. <strong>DevOps touch:</strong> the repo is created from a template that already carries the full check suite, so compliance starts on day zero.</p>
+            <p class="process-step__time">DevOps · light — scaffolding only</p>
           </article>
           <article class="process-step">
             <p class="process-step__n">02</p>
             <h3>Build</h3>
-            <p>Design the architecture. Build with AI assistance. Tests written before code. Documentation lives alongside.</p>
-            <p class="process-step__time">Most of the project time</p>
+            <p>Code written with AI assistance. <strong>DevOps touch:</strong> every pull request runs the quality + security workflow. Defects and vulnerabilities are blocked at write-time, not at the gate.</p>
+            <p class="process-step__time">DevOps · continuous — PR gate on</p>
           </article>
-          <article class="process-step">
+          <article class="process-step process-step--accent">
             <p class="process-step__n">03</p>
             <h3>Ship</h3>
-            <p>Quality checks, security scans, performance tests — all automated. The release only goes live when every check passes.</p>
-            <p class="process-step__time">A few days</p>
+            <p>The seven-assessment gate runs. Two DevOps sign-offs. Zero Critical/High. <strong>DevOps owns this step</strong> — nothing reaches production without a signed Release Readiness Report.</p>
+            <p class="process-step__time">DevOps · owned end-to-end</p>
           </article>
           <article class="process-step process-step--accent">
             <p class="process-step__n">04</p>
             <h3>Run</h3>
-            <p>Production runs with monitoring on by default. Weekly health reports go out automatically. Issues are caught before clients call.</p>
-            <p class="process-step__time">Forever</p>
+            <p>Continuous repo scanning, health checks, weekly reports. <strong>DevOps owns this step</strong> — every live app is re-scanned and re-reported on a schedule, forever.</p>
+            <p class="process-step__time">DevOps · owned end-to-end</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- TEAM -->
-    <section class="band" id="team">
+    <!-- DEVOPS PRACTICES -->
+    <section class="band" id="practices">
       <div class="container">
-        <p class="kicker kicker--dark">02 · The team</p>
-        <h2>Three roles. Three team shapes.</h2>
-        <p class="sub">Who plays which role flexes with project size. What gets checked along the way never does.</p>
+        <p class="kicker kicker--dark">02 · The practices</p>
+        <h2>What DevOps brings to every project.</h2>
+        <p class="sub">Six practices, applied uniformly. Nothing here is bespoke per project — that's the point. The same discipline on every repo is what makes "Dhwani-compliant" mean something.</p>
 
-        <h3 class="sub-h3">The three roles</h3>
-        <div class="personas">
-          <article class="persona">
-            <p class="persona__tag">PB</p>
-            <h3>Product Builder</h3>
-            <p>Drives requirements, design, and build. Talks to the AI most. Owns the technical drafting from intent to launch.</p>
+        <div class="practice-grid">
+          <article class="practice">
+            <div class="practice__icon" aria-hidden="true">01</div>
+            <h4>Defense-in-depth on every repo</h4>
+            <p>The day a repo is created it already carries the full check suite — pre-commit hooks, security scans, AI review rules, CI pipeline. No repo starts unprotected.</p>
           </article>
-          <article class="persona">
-            <p class="persona__tag">AR</p>
-            <h3>Architect</h3>
-            <p>Defines guardrails and signs off design. Reviewer and decision-maker, not implementer. Keeps quality consistent across projects.</p>
+          <article class="practice">
+            <div class="practice__icon" aria-hidden="true">02</div>
+            <h4>Zero-bug, enforced at write-time</h4>
+            <p>Dhwani's non-negotiable quality standard is checked on every pull request — while code is being written, not after. Cheaper to fix, impossible to forget.</p>
           </article>
-          <article class="persona">
-            <p class="persona__tag">AM</p>
-            <h3>Account Manager</h3>
-            <p>Owns the client relationship and the intent. Holds scope at kickoff and charter. Drives client sign-offs. Owns go-live handover.</p>
+          <article class="practice">
+            <div class="practice__icon" aria-hidden="true">03</div>
+            <h4>The seven-assessment gate</h4>
+            <p>VAPT · SAST · DAST · PENTEST · E2E · performance · load. All seven green, two DevOps sign-offs, zero Critical/High — or the release doesn't ship.</p>
           </article>
-        </div>
-
-        <h3 class="sub-h3">Three team shapes — pick the right size</h3>
-        <div class="shapes">
-          <article class="shape">
-            <p class="shape__lbl">Solo · 1 person</p>
-            <h3>Builder + AM = same person</h3>
-            <p>One person plays both roles. Architect is shared with the portfolio. DevOps support is shared.</p>
-            <p class="shape__fit"><strong>Best for:</strong> small features · ~5-day projects</p>
+          <article class="practice">
+            <div class="practice__icon" aria-hidden="true">04</div>
+            <h4>Continuous post-prod scanning</h4>
+            <p>Going live isn't the end of scanning. Live repos are re-scanned on a schedule; new CVEs, secret leaks, and licence drift surface in the weekly report.</p>
           </article>
-          <article class="shape">
-            <p class="shape__lbl">Pair · 2–3 people</p>
-            <h3>Builder + AM separate</h3>
-            <p>Two distinct roles. Architect shared across a few projects. DevOps support shared. Sign-offs are separated cleanly.</p>
-            <p class="shape__fit"><strong>Best for:</strong> ~2-week projects · customizations</p>
+          <article class="practice">
+            <div class="practice__icon" aria-hidden="true">05</div>
+            <h4>KB-backed VAPT (Kotwal)</h4>
+            <p>Every scan inherits a decade of historical findings from the Kotwal knowledge base. The next project's first scan starts where the last project's last scan finished.</p>
           </article>
-          <article class="shape shape--full">
-            <p class="shape__lbl">Full team · 4+ people</p>
-            <h3>Every role its own person</h3>
-            <p>Dedicated Architect. Dedicated DevOps engineer for the duration. Multiple Builders possible.</p>
-            <p class="shape__fit"><strong>Best for:</strong> ~4-week greenfield · government projects · regulated work</p>
+          <article class="practice">
+            <div class="practice__icon" aria-hidden="true">06</div>
+            <h4>Compliance by default</h4>
+            <p>Identical workflows on every project mean every project is checked the same way. Compliance becomes something we can <em>prove</em> from the workflow logs — not something we promise.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- WHAT WE'RE BUILDING -->
-    <section class="band band--alt" id="assistants">
+    <!-- WORKFLOWS -->
+    <section class="band band--alt" id="workflows">
       <div class="container">
-        <p class="kicker">03 · What we shipped</p>
-        <h2>Five AI assistants. One unified process.</h2>
-        <p class="sub">Each role gets a packaged AI assistant — a tested set of prompts, skills, and review rules — so nobody starts from scratch on a new project.</p>
-        <p class="sub"><strong>Live on <a href="https://github.com/dhwani-ris">github.com/dhwani-ris</a></strong> as of 2026-05-17 · v0.1.0 / v0.2.0 across 9 repos.</p>
+        <p class="kicker">03 · What runs on every repo</p>
+        <h2>Four workflows. Every repo. Same triggers.</h2>
+        <p class="sub">Each workflow fires on a defined trigger, runs its checks, and ends in a gate or an outcome. Read each row left to right: <strong>when it fires → what it does → what you get</strong>. The bar underneath says what it protects against.</p>
 
-        <div class="assistants">
-          <article class="assistant">
-            <p class="assistant__role">For the Account Manager</p>
-            <h3>Client Conversation Assistant</h3>
-            <p><strong>What it does:</strong> Helps the AM capture client intent, run discovery, draft the charter, and keep scope under control through the project.</p>
-            <p><strong>What stakeholders see:</strong> Faster sign-offs. Fewer "that's not what I meant" moments later.</p>
-            <p class="assistant__repo">Repos · <a href="https://github.com/dhwani-ris/service-am-plugin"><code>service-am-plugin</code></a> · <a href="https://github.com/dhwani-ris/product-am-plugin"><code>product-am-plugin</code></a> <em>(one per department · v0.1.0 live)</em></p>
-          </article>
+        <div class="wf-list">
 
-          <article class="assistant">
-            <p class="assistant__role">For the Architect</p>
-            <h3>Architecture Assistant</h3>
-            <p><strong>What it does:</strong> Reviews technical designs against Dhwani's reference patterns. Catches drift before it ships.</p>
-            <p><strong>What stakeholders see:</strong> Consistent quality across projects. No rogue architectures.</p>
-            <p class="assistant__repo">Repos · <a href="https://github.com/dhwani-ris/service-architect-plugin"><code>service-architect-plugin</code></a> · <a href="https://github.com/dhwani-ris/product-architect-plugin"><code>product-architect-plugin</code></a> <em>(one per department · v0.2.0 live · 9 lifecycle skills each)</em></p>
-          </article>
-
-          <article class="assistant">
-            <p class="assistant__role">For Builder + Engineering</p>
-            <h3>Code Building Assistant</h3>
-            <p><strong>What it does:</strong> Writes code with AI — but enforces tests-first, documentation-alongside, and proper review before merge.</p>
-            <p><strong>What stakeholders see:</strong> Faster delivery without the quality drops you'd normally expect from speed.</p>
-            <p class="assistant__repo">Repos · <a href="https://github.com/dhwani-ris/service-builder-plugin"><code>service-builder-plugin</code></a> · <a href="https://github.com/dhwani-ris/product-builder-plugin"><code>product-builder-plugin</code></a> <em>(one per department · v0.1.0 live · 4 sub-personas + 5 skills each)</em></p>
-          </article>
-
-          <article class="assistant assistant--ours">
-            <p class="assistant__role">For DevOps + Security</p>
-            <h3>Quality &amp; Delivery Assistant</h3>
-            <p><strong>What it does:</strong> Runs security scans, load tests, and the pre-release checklist automatically. Releases ship with a signed report.</p>
-            <p><strong>What stakeholders see:</strong> No surprises in production. Every release has evidence.</p>
-            <p class="assistant__repo">Repo · <a href="https://github.com/dhwani-ris/ai-sdlc-devops-plugin"><code>ai-sdlc-devops-plugin</code></a> <em>(shared · v0.1.0 live · surface 1 of 2)</em></p>
-          </article>
-
-          <article class="assistant assistant--ours">
-            <p class="assistant__role">For DevOps (always-on)</p>
-            <h3>Production Monitoring Assistant</h3>
-            <p><strong>What it does:</strong> Watches every live application — uptime, performance, security. Sends weekly health reports automatically.</p>
-            <p><strong>What stakeholders see:</strong> Issues caught before clients call. Monthly reports in their inbox.</p>
-            <p class="assistant__repo">Repo · <a href="https://github.com/dhwani-ris/ai-sdlc-devops-plugin"><code>ai-sdlc-devops-plugin</code></a> <em>(shared · v0.1.0 live · surface 2 of 2)</em></p>
-          </article>
-        </div>
-
-        <h3 class="sub-h3">Shared infrastructure</h3>
-        <div class="shared-repos">
-          <article class="shared-repo">
-            <h4><a href="https://github.com/dhwani-ris/ai-sdlc-skills"><code>ai-sdlc-skills</code></a> <em>· v0.1.0 live</em></h4>
-            <p>Central library of AI prompts and skills. Every assistant pulls from here. Semver-tagged with built-in tests.</p>
-          </article>
-          <article class="shared-repo">
-            <h4><a href="https://github.com/dhwani-ris/ai-sdlc-hub"><code>ai-sdlc-hub</code></a> <em>· v0.1.0 live</em></h4>
-            <p>Single onboarding site. SOPs, plugin docs, role guides. One URL anyone in the team lands on.</p>
-          </article>
-        </div>
-
-        <p class="caveat"><strong>Nine repos total — all live on <a href="https://github.com/dhwani-ris">github.com/dhwani-ris</a></strong>. Each persona-facing assistant (AM, Architect, Builder) ships as two repos — one per department (<code>service-*</code> and <code>product-*</code>) — so each department can tune its plugin without colliding. The DevOps plugin is shared across departments. Plus the two shared infrastructure repos.</p>
-      </div>
-    </section>
-
-    <!-- ASKS -->
-    <section class="band" id="asks">
-      <div class="container">
-        <p class="kicker kicker--dark">04 · What we need</p>
-        <h2>Two engineers. A small budget. Four decisions.</h2>
-        <p class="sub">Concrete, time-bound, and reviewable at each quarter boundary.</p>
-
-        <div class="asks">
-
-          <article class="ask">
-            <p class="ask__lbl">People</p>
-            <h3>2 dedicated DevOps engineers · 4 quarters.</h3>
-            <div class="ask-grid">
-              <div class="ask-grid__item">
-                <p class="ask-grid__role">Engineer 1 · Quality &amp; Delivery anchor</p>
-                <ul class="ask-grid__bullets">
-                  <li>Owns Stage C end-to-end (pre-go-live checks)</li>
-                  <li>Builds Kotwal CI integration</li>
-                  <li>Builds the Release Readiness Report pipeline</li>
-                  <li>Owns the <code>ai-sdlc-devops-plugin</code> Quality &amp; Delivery surface</li>
-                </ul>
+          <article class="wf">
+            <div class="wf__head">
+              <span class="wf__trigger">On every pull request</span>
+              <span class="wf__title">Quality &amp; security check</span>
+            </div>
+            <div class="wf__stages">
+              <div class="wf-stage">
+                <p class="wf-stage__lbl">Fires when</p>
+                <p class="wf-stage__val">A developer opens or updates a pull request on any branch.</p>
               </div>
-              <div class="ask-grid__item">
-                <p class="ask-grid__role">Engineer 2 · Adoption &amp; Operate anchor</p>
-                <ul class="ask-grid__bullets">
-                  <li>Builds the Day 1 starter template</li>
-                  <li>Builds inter-plugin bridge skills</li>
-                  <li>Owns Production Monitoring + the hub</li>
-                  <li>Owns the <code>ai-sdlc-devops-plugin</code> Monitoring surface</li>
-                </ul>
+              <div class="wf-stage">
+                <p class="wf-stage__lbl">What it does</p>
+                <p class="wf-stage__val">AI reviews the diff against the coding standard · static security scan · dependency &amp; licence check · secret scan.</p>
+              </div>
+              <div class="wf-stage is-outcome">
+                <p class="wf-stage__lbl">What you get</p>
+                <p class="wf-stage__val"><strong>A pass or a block.</strong> Critical/High findings stop the merge — no override.</p>
               </div>
             </div>
-            <p>Plus part-time support from each project's Tech Lead during their rollout window. <strong>No new permanent hires</strong> beyond what's already planned.</p>
+            <p class="wf__protects"><strong>Defects and known vulnerabilities entering the codebase</strong> — caught at write-time, the cheapest possible moment.</p>
           </article>
 
-          <article class="ask">
-            <p class="ask__lbl">Tooling</p>
-            <h3>Free for most things · small licence budget for the rest.</h3>
-            <div class="ask-split">
-              <div class="ask-split__col ask-split__col--free">
-                <p class="ask-split__lbl">Free or already-licensed</p>
-                <p>GitHub (private) · Claude CLI · Mermaid · Google Stitch · Fireflies.ai · <strong>Kotwal</strong> · <strong>Mukhbir</strong> · Prometheus · Loki · Tempo · Grafana · Terraform · pre-commit · gitleaks</p>
+          <article class="wf">
+            <div class="wf__head">
+              <span class="wf__trigger">On merge to development</span>
+              <span class="wf__title">Deploy &amp; regression</span>
+            </div>
+            <div class="wf__stages">
+              <div class="wf-stage">
+                <p class="wf-stage__lbl">Fires when</p>
+                <p class="wf-stage__val">An approved PR merges into the working branch.</p>
               </div>
-              <div class="ask-split__col ask-split__col--paid">
-                <p class="ask-split__lbl">Needs a small budget</p>
-                <p>Paid security scanning tier (Semgrep / Snyk) · production status page (Better Uptime or Instatus) · self-service deployment portal — <em>Backstage (OSS, build effort) or paid (Port / Cortex)</em></p>
+              <div class="wf-stage">
+                <p class="wf-stage__lbl">What it does</p>
+                <p class="wf-stage__val">Auto-deploys to the dev environment · runs the full regression suite · re-checks integration points.</p>
+              </div>
+              <div class="wf-stage is-outcome">
+                <p class="wf-stage__lbl">What you get</p>
+                <p class="wf-stage__val"><strong>An always-working dev environment</strong> the team and client can watch take shape.</p>
               </div>
             </div>
-            <p>Exact annual licence estimate refined in the <strong>Q0 inventory phase</strong> — before the spend commitment is made.</p>
+            <p class="wf__protects"><strong>Integration drift and broken builds</strong> — every merge is proven to deploy and pass regression before anyone relies on it.</p>
           </article>
 
-          <article class="ask">
-            <p class="ask__lbl">Decisions</p>
-            <h3>Four standards calls only leadership can make.</h3>
-            <ol class="decisions">
-              <li>
-                <p class="decisions__q">Front-end stack — standardise on one, or stay project-dependent?</p>
-                <p class="decisions__why">Drives which Builder-plugin templates we build first (Vue vs React).</p>
-              </li>
-              <li>
-                <p class="decisions__q">Cloud target — AWS default, with on-premise for government work?</p>
-                <p class="decisions__why">Drives IaC module choice and Architecture Assistant reference patterns.</p>
-              </li>
-              <li>
-                <p class="decisions__q">Deployment portal — build with Backstage, or buy Port / Cortex?</p>
-                <p class="decisions__why">Q2 capacity hinges on this — OSS is a build effort, paid is faster but recurring spend.</p>
-              </li>
-              <li>
-                <p class="decisions__q">Project sizing — who classifies solo / pair / full team?</p>
-                <p class="decisions__why">Determines team-shape assignment per project and DevOps pull on each engagement.</p>
-              </li>
-            </ol>
+          <article class="wf">
+            <div class="wf__head">
+              <span class="wf__trigger">Before go-live</span>
+              <span class="wf__title">The seven-assessment gate</span>
+            </div>
+            <div class="wf__stages">
+              <div class="wf-stage">
+                <p class="wf-stage__lbl">Fires when</p>
+                <p class="wf-stage__val">A release candidate is put forward for production, after UAT sign-off.</p>
+              </div>
+              <div class="wf-stage">
+                <p class="wf-stage__lbl">What it does</p>
+                <p class="wf-stage__val">Runs all seven assessments · aggregates findings by severity · requires two DevOps sign-offs (mid-build + final).</p>
+              </div>
+              <div class="wf-stage is-outcome">
+                <p class="wf-stage__lbl">What you get</p>
+                <p class="wf-stage__val"><strong>A signed Release Readiness Report</strong> — evidence, not assurances. Zero Critical/High or the gate stays shut.</p>
+              </div>
+            </div>
+            <p class="wf__protects"><strong>Shipping insecure or unproven code to production</strong> — the gate is the last line, and it doesn't negotiate.</p>
+          </article>
+
+          <article class="wf">
+            <div class="wf__head">
+              <span class="wf__trigger">Continuously, in production</span>
+              <span class="wf__title">Re-scan &amp; report</span>
+            </div>
+            <div class="wf__stages">
+              <div class="wf-stage">
+                <p class="wf-stage__lbl">Fires when</p>
+                <p class="wf-stage__val">On a schedule — daily scans, weekly reporting — for the life of the application.</p>
+              </div>
+              <div class="wf-stage">
+                <p class="wf-stage__lbl">What it does</p>
+                <p class="wf-stage__val">Re-scans the repo (secrets · deps · licences) · runs health &amp; performance checks · escalates anomalies.</p>
+              </div>
+              <div class="wf-stage is-outcome">
+                <p class="wf-stage__lbl">What you get</p>
+                <p class="wf-stage__val"><strong>A weekly health report per app</strong> — uptime, latency, new CVEs, open findings — routed to the owner.</p>
+              </div>
+            </div>
+            <p class="wf__protects"><strong>Drift, new CVEs, and silent degradation after launch</strong> — a compliant release stays compliant.</p>
           </article>
 
         </div>
       </div>
     </section>
 
-    <!-- TIMELINE -->
-    <section class="band band--alt" id="timeline">
+    <!-- COMPLIANCE -->
+    <section class="band" id="compliance">
       <div class="container">
-        <p class="kicker">05 · Timeline</p>
-        <h2>One year. Five milestones.</h2>
-        <p class="sub">Each quarter delivers one complete capability. Leadership reviews at every boundary before continuing.</p>
+        <p class="kicker kicker--dark">04 · Per-project assessment &amp; compliance</p>
+        <h2>"Dhwani-compliant" is a checklist, not a claim.</h2>
+        <p class="sub">Because every repo runs the identical workflow bundle, every project is held to the same bar — and the proof lives in the workflow logs. Here's what compliant concretely means, and the lever that enforces it.</p>
 
-        <div class="timeline">
-          <article class="milestone">
-            <p class="milestone__when">Now</p>
-            <h3>Foundation</h3>
-            <p>Pick the pilot project. Agree the standards. Build the shared infrastructure that every assistant will use.</p>
-          </article>
-          <article class="milestone">
-            <p class="milestone__when">Quarter 1</p>
-            <h3>Understand stage assistants</h3>
-            <p>Client Conversation + Architecture Assistants available to all teams. First projects start with them on day one.</p>
-          </article>
-          <article class="milestone">
-            <p class="milestone__when">Quarter 2</p>
-            <h3>Build stage assistant</h3>
-            <p>Code Building Assistant rolled out across active projects. AI writes alongside developers — with the guardrails on.</p>
-          </article>
-          <article class="milestone">
-            <p class="milestone__when">Quarter 3</p>
-            <h3>Ship stage assistant</h3>
-            <p>Quality &amp; Delivery Assistant gates every release. First project ships end-to-end through the new process.</p>
-          </article>
-          <article class="milestone milestone--final">
-            <p class="milestone__when">Quarter 4</p>
-            <h3>Run stage live everywhere</h3>
-            <p>Production Monitoring Assistant on every active project. Weekly reports automated. The full process is live.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- USER FLOW · THE CLIENT'S JOURNEY -->
-    <section class="band" id="client-flow">
-      <div class="container">
-        <p class="kicker kicker--dark">06 · The user flow · what the client experiences</p>
-        <h2>From a fuzzy idea to a product they trust.</h2>
-        <p class="sub">The same project, told from the client's chair. Seven moments that matter — and what they hear from Dhwani at each one.</p>
-
-        <div class="journey">
-          <article class="journey-step">
-            <div class="journey-step__icon">①</div>
-            <div class="journey-step__body">
-              <p class="journey-step__quote">"I have an idea — I'm not sure how to scope it."</p>
-              <h3>The conversation</h3>
-              <p>AM listens. Real intent surfaces. Discovery interviews captured automatically. Charter drafted by AI, refined together. Client signs.</p>
-              <p class="journey-step__win">→ Signed Charter · scope and success criteria agreed</p>
-            </div>
-          </article>
-
-          <article class="journey-step">
-            <div class="journey-step__icon">②</div>
-            <div class="journey-step__body">
-              <p class="journey-step__quote">"Show me what it'll look like."</p>
-              <h3>The mock-up</h3>
-              <p>Working mock-up on a real URL within days. Client refines it on the actual page, not on a slide deck. Each round closes in hours.</p>
-              <p class="journey-step__win">→ Mock-up signed off · the build can begin</p>
-            </div>
-          </article>
-
-          <article class="journey-step">
-            <div class="journey-step__icon">③</div>
-            <div class="journey-step__body">
-              <p class="journey-step__quote">"How's it going? I don't want big-bang surprises."</p>
-              <h3>The continuous preview</h3>
-              <p>Client gets a dev URL that updates daily. They watch the product take shape. Concerns surface early — not at UAT.</p>
-              <p class="journey-step__win">→ Continuous visibility · no surprise at the end</p>
-            </div>
-          </article>
-
-          <article class="journey-step">
-            <div class="journey-step__icon">④</div>
-            <div class="journey-step__body">
-              <p class="journey-step__quote">"Let me try it myself."</p>
-              <h3>The validation</h3>
-              <p>UAT environment ready when the client is. Issues filed → fixed → re-validated. No back-and-forth over screenshots.</p>
-              <p class="journey-step__win">→ UAT sign-off · the product behaves as agreed</p>
-            </div>
-          </article>
-
-          <article class="journey-step journey-step--gate">
-            <div class="journey-step__icon">⑤</div>
-            <div class="journey-step__body">
-              <p class="journey-step__quote">"Is it safe to launch?"</p>
-              <h3>The Release Readiness Report</h3>
-              <p>One page. All security checks, load tests, performance baselines. <strong>Every check signed off before public users get in.</strong></p>
-              <p class="journey-step__win">→ Confidence to launch · evidence, not assurances</p>
-            </div>
-          </article>
-
-          <article class="journey-step">
-            <div class="journey-step__icon">⑥</div>
-            <div class="journey-step__body">
-              <p class="journey-step__quote">"Take it live."</p>
-              <h3>The launch</h3>
-              <p>Production goes live. Heightened monitoring for the first thirty minutes. AM stays in the room. Rollback rehearsed if needed.</p>
-              <p class="journey-step__win">→ Live product · public users in</p>
-            </div>
-          </article>
-
-          <article class="journey-step journey-step--ongoing">
-            <div class="journey-step__icon">⑦</div>
-            <div class="journey-step__body">
-              <p class="journey-step__quote">"How is it actually running?"</p>
-              <h3>The monthly report</h3>
-              <p>Automated health report lands in the client's inbox monthly. Uptime · performance · issues caught · anything to watch. They never have to chase.</p>
-              <p class="journey-step__win">→ Sustained confidence · ongoing trust</p>
-            </div>
-          </article>
-        </div>
-
-        <p class="caveat">This is what the client sees — the outside-in view. The next two sections show the same journey from inside Dhwani: the complete picture of who does what (§07) and how the project flows through environments (§09).</p>
-      </div>
-    </section>
-
-    <!-- THE COMPLETE PICTURE -->
-    <section class="band band--alt" id="complete">
-      <div class="container">
-        <p class="kicker">07 · The complete picture</p>
-        <h2>Every stage. Every role. Every gate.</h2>
-        <p class="sub">The full AI-SDLC laid out in sequence. Read this once to see how a project moves from a first conversation to a live, monitored application.</p>
-
-        <div class="full-flow">
-          <article class="flow-step">
-            <span class="flow-step__n">01</span>
-            <div class="flow-step__main">
-              <h3>Intent &amp; Charter</h3>
-              <p class="flow-step__meta"><strong>AM (with PB)</strong> · using the <em>Client Conversation Assistant</em></p>
-              <p>AM-led. Capture the client's real intent. Map stakeholders. Agree the Charter — scope, success criteria, team, escalation.</p>
-            </div>
-            <p class="flow-step__gate">Gate · Signed Charter</p>
-          </article>
-
-          <article class="flow-step">
-            <span class="flow-step__n">02</span>
-            <div class="flow-step__main">
-              <h3>Solutioning</h3>
-              <p class="flow-step__meta"><strong>PB (AM in client-facing parts)</strong> · using the <em>Client Conversation Assistant</em></p>
-              <p>Draft functional requirements, user roles, process workflows, data model, wireframes. Mock-ups signed off by client — AM facilitates the client touchpoints.</p>
-            </div>
-            <p class="flow-step__gate">Gate · Client signs the mock-up</p>
-          </article>
-
-          <article class="flow-step">
-            <span class="flow-step__n">03</span>
-            <div class="flow-step__main">
-              <h3>Tech Spec &amp; sign-off</h3>
-              <p class="flow-step__meta"><strong>PB drafts · Architect signs</strong> · using the <em>Architecture Assistant</em></p>
-              <p>Tech Spec assembled. Architecture validated against reference patterns. Sign-off captured as a signed git tag.</p>
-            </div>
-            <p class="flow-step__gate">Gate · Tech Spec signed · ready for the first AI prompt</p>
-          </article>
-
-          <article class="flow-step flow-step--build">
-            <span class="flow-step__n">04</span>
-            <div class="flow-step__main">
-              <h3>Build &amp; QA loop</h3>
-              <p class="flow-step__meta"><strong>Engineering + PB</strong> · using the <em>Code Building Assistant</em></p>
-              <p>Four AI personas inside one repo: Dev writes code (strictly to docs), QA writes tests first, BA maintains documentation, Reviewer checks PRs. Auto-deploys per branch.</p>
-            </div>
-            <p class="flow-step__gate">Gate · CI green · review approved · merge to <code>development</code></p>
-          </article>
-
-          <article class="flow-step">
-            <span class="flow-step__n">05</span>
-            <div class="flow-step__main">
-              <h3>Client UAT</h3>
-              <p class="flow-step__meta"><strong>AM + Client</strong> · UAT environment auto-provisioned</p>
-              <p>Client validates the built product against the original intent. Often optional on small projects — staging can serve as the preview.</p>
-            </div>
-            <p class="flow-step__gate">Gate · UAT signed · all critical issues resolved</p>
-          </article>
-
-          <article class="flow-step flow-step--ours">
-            <span class="flow-step__n">06</span>
-            <div class="flow-step__main">
-              <h3>Pre-go-live checks</h3>
-              <p class="flow-step__meta"><strong>DevOps + Security</strong> · using the <em>Quality &amp; Delivery Assistant</em></p>
-              <p>The seven mandatory assessments — VAPT · SAST · DAST · PENTEST · E2E · performance baseline · load test. All auto-generated. SLOs confirmed. <strong>Critical + High = zero before go-live (hard fail).</strong> Medium = exception only with written ETA from priority lead. See <a href="#devops-charter">the DevOps contract (§10)</a> for the full severity rules.</p>
-            </div>
-            <p class="flow-step__gate">Gate · All seven assessments green · Release Readiness Report signed by DevOps (twice)</p>
-          </article>
-
-          <article class="flow-step flow-step--ours">
-            <span class="flow-step__n">07</span>
-            <div class="flow-step__main">
-              <h3>Go-Live</h3>
-              <p class="flow-step__meta"><strong>DevOps + AM</strong> · using the <em>Quality &amp; Delivery Assistant</em></p>
-              <p>Production deploys. Post-deploy monitoring tightens for the first 30 minutes. Public users only after the gate passes.</p>
-            </div>
-            <p class="flow-step__gate">Gate · Stable on production for 30 min · rollback rehearsed</p>
-          </article>
-
-          <article class="flow-step flow-step--ours">
-            <span class="flow-step__n">08</span>
-            <div class="flow-step__main">
-              <h3>Run forever</h3>
-              <p class="flow-step__meta"><strong>DevOps</strong> · using the <em>Production Monitoring Assistant</em></p>
-              <p>Weekly health monitoring. CPU should stay under 50%. 3-tier alert escalation — third alert is critical and triggers auto scale. Weekly + monthly reports to project owners.</p>
-            </div>
-            <p class="flow-step__gate">Ongoing · feeds learnings back to KM for the next intent</p>
-          </article>
-        </div>
-
-        <p class="caveat">All eight stages happen on every project. Their <em>depth</em> changes with project size — a 5-day mGrant fit-gap moves through them faster than a 4-week greenfield. The gates never get skipped.</p>
-      </div>
-    </section>
-
-    <!-- INSIDE EACH PLUGIN -->
-    <section class="band band--alt" id="inside">
-      <div class="container">
-        <p class="kicker kicker--dark">08 · Inside each plugin</p>
-        <h2>What's actually in each repo.</h2>
-        <p class="sub">For engineers and the curious. Each plugin is a packaged set of skills, sub-personas, and commands that Claude Code loads on demand.</p>
-
-        <div class="plugins">
-          <article class="plugin">
-            <p class="plugin__owner">Used by · Account Manager</p>
-            <h3>service-am-plugin · product-am-plugin</h3>
-            <p><strong>Two repos, one per department.</strong> Same skills shape, tuned for the engagement model of each.</p>
-            <p><strong>Skills inside:</strong> stakeholder mapping · MoM authoring · charter drafting · client comms · scope monitor · sign-off capture</p>
-            <p><strong>Main command:</strong> <code>claude /intent</code></p>
-          </article>
-
-          <article class="plugin">
-            <p class="plugin__owner">Used by · Architect</p>
-            <h3>service-architect-plugin · product-architect-plugin</h3>
-            <p><strong>Two repos, one per department.</strong> Reference patterns differ between Service and Product work.</p>
-            <p><strong>Skills inside:</strong> architecture review · pattern matching · ADR drafting · IaC pattern selection · pre-go-live validation</p>
-            <p><strong>Main command:</strong> <code>claude /architect</code></p>
-          </article>
-
-          <article class="plugin plugin--builder">
-            <p class="plugin__owner">Used by · Builder + Engineering</p>
-            <h3>service-builder-plugin · product-builder-plugin</h3>
-            <p><strong>Two repos, one per department.</strong> Same four sub-personas inside each:</p>
-            <ul class="plugin-list">
-              <li><strong>Dev</strong> · writes code strictly following docs · no scope expansion</li>
-              <li><strong>QA</strong> · writes test cases <em>first</em> from the PRD · then validates code</li>
-              <li><strong>BA</strong> · owns comms · maintains docs as code evolves</li>
-              <li><strong>Reviewer</strong> · checks tests + docs + PR hygiene before merge</li>
+        <div class="compliance-split">
+          <div class="compliance-checklist">
+            <h4>A project is Dhwani-compliant when…</h4>
+            <ul>
+              <li>The repo was scaffolded from the <strong>standard template</strong> — full check suite present from day zero</li>
+              <li>Every merged PR <strong>passed the quality &amp; security workflow</strong> — no bypassed blocks</li>
+              <li>All <strong>seven assessments are green</strong> on the shipped release</li>
+              <li><strong>Zero Critical/High</strong> findings outstanding; every Medium has a written ETA</li>
+              <li><strong>Two DevOps sign-offs</strong> recorded — mid-build and final pre-prod</li>
+              <li>The app is on the <strong>continuous post-prod scan + weekly report</strong> schedule</li>
             </ul>
-            <p><strong>Main command:</strong> <code>claude /build</code> · plus master-prompt creation tool</p>
-          </article>
-
-          <article class="plugin plugin--ours">
-            <p class="plugin__owner">Used by · DevOps + Security</p>
-            <h3>ai-sdlc-devops-plugin</h3>
-            <p><strong>Two surfaces inside the same plugin:</strong></p>
-            <ul class="plugin-list">
-              <li><strong>Quality &amp; Delivery</strong> · the seven-assessment gate (VAPT · SAST · DAST · PENTEST · E2E · performance · load) · two DevOps sign-offs (mid-build + final pre-prod) · Critical/High severity hard-block · Kotwal KB inheritance — see <a href="#devops-charter">§10 The DevOps contract</a></li>
-              <li><strong>Production Monitoring</strong> · weekly per-app health report (uptime, latency, error budget, new CVEs in deps) · continuous repo scanning (SCA + secrets + OSS licence) · CPU &lt; 50% check every 7 days · 3-tier alert escalation · auto scale on 3rd critical</li>
-            </ul>
-            <p><strong>Main commands:</strong> <code>claude /pre-go-live</code> · <code>claude /monitor</code></p>
-          </article>
-
-          <article class="plugin">
-            <p class="plugin__owner">Shared infrastructure</p>
-            <h3>ai-sdlc-skills</h3>
-            <p>Every skill referenced above lives here. Semver-tagged with eval suites. Plugins pull from here, so a fix in one place flows to every active project.</p>
-          </article>
-
-          <article class="plugin">
-            <p class="plugin__owner">Onboarding · SOPs · index</p>
-            <h3>ai-sdlc-hub</h3>
-            <p>Single GitHub Pages site. Per-persona onboarding paths, plugin docs, deployment lifecycle, FAQs. <strong>One URL anyone lands on</strong> to find the plugin for their role.</p>
-          </article>
+          </div>
+          <aside class="compliance-note">
+            <p class="callout__tag">The enforcement lever</p>
+            <h4>Eligibility is the entry ticket.</h4>
+            <p>The gate services are available <strong>only to projects that ran through the AI-SDLC framework</strong> — Charter, Tech Spec, and a template-scaffolded repo. A project that skipped the framework can't pass eligibility, so the gate never opens for it.</p>
+            <p><em>Skip the framework → no Dhwani prod deploy.</em> That's what makes the checklist above unavoidable rather than aspirational.</p>
+          </aside>
         </div>
-      </div>
-    </section>
-
-    <!-- HOW A PROJECT STARTS AND SHIPS · 6 ENVIRONMENTS -->
-    <section class="band" id="journey">
-      <div class="container">
-        <p class="kicker kicker--dark">09 · From idea to live · the project journey</p>
-        <h2>How a project starts, builds, and ships.</h2>
-        <p class="sub">Six environments. One gate at each. The same flow whether the project is a 5-day fit-gap or a 4-week greenfield.</p>
-
-        <div class="lifecycle-flow">
-          <article class="env">
-            <span class="env__n">①</span>
-            <h3>Wrapper · GitHub repo</h3>
-            <p><strong>Triggered by:</strong> Product Builder (or AM = Builder on solo projects). One command:</p>
-            <p style="font-family:var(--font-mono);font-size:13px;background:var(--bg-alt);padding:8px 10px;border-radius:6px;color:var(--ink-2);">gh repo create dhwani-{stack}-{client} --template ai-sdlc-stage-a-starter</p>
-            <p>Repo arrives pre-wired: folders · schemas · CI seed · Pages → CloudFront · <code>.claude/</code> catalogue. First AI prompt ready to execute.</p>
-          </article>
-
-          <article class="env">
-            <span class="env__n">②</span>
-            <h3>Staging · auto-provisioned</h3>
-            <p><strong>Triggered by:</strong> automatic on repo creation.</p>
-            <p>Staging env spins up the moment the wrapper is set up. First AI prompt runs here. Auto-named: <code>{project}-staging.dhwaniris.in</code>. Builder validates approach before going wider.</p>
-          </article>
-
-          <article class="env">
-            <span class="env__n">③</span>
-            <h3>Development · the working branch</h3>
-            <p><strong>Triggered by:</strong> merge to the <code>development</code> branch.</p>
-            <p>Auto-deploys to the dev environment. Builder iterates with the Code Building Assistant — Dev writes code, QA writes tests first, BA keeps docs current, Reviewer checks PRs. Regression runs continuously.</p>
-          </article>
-
-          <article class="env">
-            <span class="env__n">④</span>
-            <h3>UAT · often optional</h3>
-            <p><strong>Triggered by:</strong> AM, after dev passes regression. Auto-creates the UAT env.</p>
-            <p>Client validates against the original intent. On small projects, staging often serves as the client preview and UAT is skipped. On larger projects, UAT is a formal cycle with named approvers.</p>
-          </article>
-
-          <article class="env env--gate">
-            <span class="env__n">⑤</span>
-            <h3>Pre-go-live gate · DevOps plugin</h3>
-            <p><strong>Triggered by:</strong> DevOps, when UAT (or dev) signs off.</p>
-            <p>The Quality &amp; Delivery Assistant runs all seven assessments: VAPT · SAST · DAST · PENTEST · E2E · performance baseline · load test. SLOs confirmed against the Sol Doc. <strong>Critical + High findings = zero before go-live (no exception). Mediums need a written ETA owned by the priority lead.</strong> See <a href="#devops-charter">§10 The DevOps contract</a> for the full rules.</p>
-          </article>
-
-          <article class="env env--prod">
-            <span class="env__n">⑥</span>
-            <h3>Production · public users</h3>
-            <p><strong>Triggered by:</strong> the gate passes. AM + DevOps sign Go-Live.</p>
-            <p>Public deploy. Post-deploy monitoring tightens for 30 minutes. Production Monitoring Assistant takes over: <strong>weekly CPU check &lt; 50%</strong>, three-tier alert escalation, auto scale on the third critical alert, weekly + monthly reports to project owners.</p>
-          </article>
-        </div>
-
-        <p class="caveat">The journey is the same on every project. <em>Depth</em> changes — a 5-day fit-gap might collapse Stages ③ + ④ into one merge, while a regulated government project may add a compliance gate between ⑤ and ⑥. The six environments stay constant.</p>
       </div>
     </section>
 
     <!-- DEVOPS CHARTER -->
     <section class="band band--alt" id="devops-charter">
       <div class="container">
-        <p class="kicker">10 · The DevOps contract</p>
+        <p class="kicker">05 · The DevOps contract</p>
         <h2>DevOps isn't a phase. It's a contract across all of them.</h2>
-        <p class="sub">Every other assistant runs <em>in</em> a phase. DevOps runs <em>across</em> them — three streams that bind the lifecycle together, two sign-offs that gate production, and one severity rule that has no exceptions.</p>
+        <p class="sub">The practices, workflows, and compliance checklist above all rest on one contract — three streams that bind the lifecycle together, two sign-offs that gate production, and one severity rule that has no exceptions.</p>
 
         <h3 class="sub-h3">Three streams, every phase</h3>
         <div class="charter-streams">
@@ -734,23 +377,23 @@
     <!-- CLOSE -->
     <section class="band band--dark" id="close">
       <div class="container container--narrow">
-        <p class="kicker kicker--light">For today's session</p>
-        <h2 class="light">Three things to lock.</h2>
+        <p class="kicker kicker--light">The bottom line</p>
+        <h2 class="light">Same checks, every repo, every time.</h2>
 
         <ol class="qs">
-          <li><strong>The pilot.</strong> Which project exercises the full process but isn't client-critical from day one?</li>
-          <li><strong>Ownership.</strong> Who owns each AI assistant going forward — a vertical lead, a champion, or a team?</li>
-          <li><strong>Timeline pressure.</strong> Do we ship the foundations by quarter-end, or do we have more runway?</li>
+          <li><strong>Uniform, not bespoke.</strong> Every project runs the identical workflow bundle — so compliance is comparable across the whole portfolio.</li>
+          <li><strong>Proven, not promised.</strong> Every gate decision is backed by workflow logs and a signed report. "Dhwani-compliant" is auditable.</li>
+          <li><strong>Continuous, not one-shot.</strong> Compliance is held after launch, not just claimed at it — repos keep getting scanned and reported on for the life of the app.</li>
         </ol>
 
-        <p class="lock light">Pick the pilot. The rest follows.</p>
+        <p class="lock light">If it ran through the framework, it's provably compliant. If it didn't, it doesn't ship.</p>
       </div>
     </section>
 
     <footer class="foot">
       <div class="container">
         <p><strong>Dhwani RIS</strong> · Empowering Social Impact Through Technology</p>
-        <p class="foot__meta">How Dhwani builds software with AI · v1.4 · 2026-05-27 · Prepared by Dhwani RIS</p>
+        <p class="foot__meta">Dhwani RIS DevOps · Practices · Workflows · Compliance · v2.0 · 2026-05-27</p>
       </div>
     </footer>
 
