@@ -1521,3 +1521,222 @@ ol.qs strong { color: var(--ink); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
+
+/* ──────────────────────────────────────────────────────
+   §10 · DevOps Charter — bespoke visual language
+   Each block has a distinct shape and colour rail so the
+   section reads visually different from §01/§07/§09.
+   ────────────────────────────────────────────────────── */
+
+:root {
+  --stream-build: #2D6CDF;
+  --stream-build-tint: #EAF1FC;
+  --stream-gate: #F47C20;
+  --stream-gate-tint: #FFF1E5;
+  --stream-run: #1F9D6B;
+  --stream-run-tint: #E6F6EE;
+  --sev-crit: #C0392B;
+  --sev-crit-tint: #FBEAE7;
+  --sev-med: #C88200;
+  --sev-med-tint: #FFF5DE;
+  --sev-low: #5C5C5C;
+  --sev-low-tint: #F2F2EE;
+}
+
+#devops-charter { padding-top: 96px; padding-bottom: 96px; }
+#devops-charter > .container > h2 { font-size: clamp(34px, 4vw, 46px); letter-spacing: -0.015em; }
+
+/* Three streams — column cards with a thick left rail in stream colour */
+.charter-streams {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 32px 0 56px;
+}
+.stream-card {
+  position: relative;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px 24px 24px 30px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 280px;
+}
+.stream-card::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 6px;
+  background: var(--rail, var(--ink));
+}
+.stream-card.is-build  { --rail: var(--stream-build); }
+.stream-card.is-gate   { --rail: var(--stream-gate); }
+.stream-card.is-run    { --rail: var(--stream-run); }
+.stream-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rail);
+  margin-bottom: 14px;
+}
+.stream-card__badge::before {
+  content: "";
+  display: inline-block;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--rail);
+}
+.stream-card h3 { font-size: 21px; margin: 0 0 10px; line-height: 1.25; letter-spacing: -0.01em; }
+.stream-card p { color: var(--ink-2); font-size: 15.5px; margin: 0 0 14px; }
+.stream-card__when {
+  margin-top: auto;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+  padding-top: 14px;
+  border-top: 1px dashed var(--line);
+}
+
+/* Seven assessments — numbered hex-style badges in a 2-column matrix */
+.assessment-matrix {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin: 28px 0 24px;
+  counter-reset: assessment;
+}
+.assessment {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 18px;
+  align-items: start;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 18px 20px;
+}
+.assessment__num {
+  counter-increment: assessment;
+  width: 44px; height: 44px;
+  display: grid;
+  place-items: center;
+  background: var(--ink);
+  color: var(--ink-on-dark);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: 10px;
+  transform: rotate(-3deg);
+}
+.assessment__num::before { content: counter(assessment, decimal-leading-zero); }
+.assessment.is-extra { background: transparent; border-style: dashed; }
+.assessment.is-extra .assessment__num { counter-increment: none; background: var(--orange); transform: rotate(3deg); }
+.assessment.is-extra .assessment__num::before { content: "+"; font-size: 22px; }
+.assessment.is-extra h4 { color: var(--orange-dark); }
+.assessment h4 { font-size: 16px; margin: 0 0 6px; letter-spacing: -0.005em; }
+.assessment h4 code { font-size: 0.92em; background: transparent; padding: 0; color: var(--orange-dark); }
+.assessment p { font-size: 14.5px; color: var(--ink-2); margin: 0; line-height: 1.5; }
+.assessment-caveat {
+  font-size: 14.5px;
+  color: var(--muted);
+  font-style: italic;
+  margin: 16px 0 56px;
+  text-align: center;
+}
+
+/* Severity tiers — three colour-coded blocks side by side */
+.severity-tiers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin: 28px 0 56px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.tier {
+  padding: 26px 24px;
+  border-right: 1px solid var(--line);
+  background: var(--tier-bg, var(--bg));
+  position: relative;
+}
+.tier:last-child { border-right: 0; }
+.tier.is-crit { --tier-bg: var(--sev-crit-tint); --tier-ink: var(--sev-crit); }
+.tier.is-med  { --tier-bg: var(--sev-med-tint);  --tier-ink: var(--sev-med); }
+.tier.is-low  { --tier-bg: var(--sev-low-tint);  --tier-ink: var(--sev-low); }
+.tier__label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--tier-ink);
+  margin: 0 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.tier__label::before {
+  content: "";
+  width: 8px; height: 8px;
+  background: var(--tier-ink);
+  border-radius: 50%;
+}
+.tier__verdict {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 10px;
+  color: var(--ink);
+  line-height: 1.3;
+}
+.tier p { font-size: 14.5px; color: var(--ink-2); margin: 0; line-height: 1.55; }
+
+/* Eligibility + Sentinel — full-width dual callouts with stronger visual weight */
+.dual-callout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin: 28px 0 0;
+}
+.callout {
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+  padding: 28px 26px;
+  background: var(--bg);
+  position: relative;
+}
+.callout.is-policy { background: var(--ink); color: var(--ink-on-dark); }
+.callout.is-policy h4 { color: var(--ink-on-dark); }
+.callout.is-policy p { color: var(--muted-on-dark); }
+.callout.is-policy strong { color: var(--ink-on-dark); }
+.callout.is-policy em { color: var(--orange); font-style: normal; }
+.callout__tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--orange-dark);
+  margin: 0 0 14px;
+}
+.callout.is-policy .callout__tag { color: var(--orange); }
+.callout h4 { font-size: 22px; margin: 0 0 12px; letter-spacing: -0.01em; line-height: 1.25; }
+.callout p { font-size: 15.5px; line-height: 1.6; margin: 0; }
+
+@media (max-width: 880px) {
+  .charter-streams { grid-template-columns: 1fr; }
+  .assessment-matrix { grid-template-columns: 1fr; }
+  .severity-tiers { grid-template-columns: 1fr; }
+  .tier { border-right: 0; border-bottom: 1px solid var(--line); }
+  .tier:last-child { border-bottom: 0; }
+  .dual-callout { grid-template-columns: 1fr; }
+}
