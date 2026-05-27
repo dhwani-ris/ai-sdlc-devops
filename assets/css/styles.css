@@ -1701,24 +1701,7 @@ ol.qs strong { color: var(--ink); }
 .tier p { font-size: 14.5px; color: var(--ink-2); margin: 0; line-height: 1.55; }
 
 /* Eligibility + Sentinel — full-width dual callouts with stronger visual weight */
-.dual-callout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin: 28px 0 0;
-}
-.callout {
-  border: 2px solid var(--ink);
-  border-radius: var(--radius);
-  padding: 28px 26px;
-  background: var(--bg);
-  position: relative;
-}
-.callout.is-policy { background: var(--ink); color: var(--ink-on-dark); }
-.callout.is-policy h4 { color: var(--ink-on-dark); }
-.callout.is-policy p { color: var(--muted-on-dark); }
-.callout.is-policy strong { color: var(--ink-on-dark); }
-.callout.is-policy em { color: var(--orange); font-style: normal; }
+/* .callout__tag is reused by the §04 compliance-note */
 .callout__tag {
   font-family: var(--font-mono);
   font-size: 11px;
@@ -1728,9 +1711,6 @@ ol.qs strong { color: var(--ink); }
   color: var(--orange-dark);
   margin: 0 0 14px;
 }
-.callout.is-policy .callout__tag { color: var(--orange); }
-.callout h4 { font-size: 22px; margin: 0 0 12px; letter-spacing: -0.01em; line-height: 1.25; }
-.callout p { font-size: 15.5px; line-height: 1.6; margin: 0; }
 
 @media (max-width: 880px) {
   .charter-streams { grid-template-columns: 1fr; }
@@ -1738,7 +1718,6 @@ ol.qs strong { color: var(--ink); }
   .severity-tiers { grid-template-columns: 1fr; }
   .tier { border-right: 0; border-bottom: 1px solid var(--line); }
   .tier:last-child { border-bottom: 0; }
-  .dual-callout { grid-template-columns: 1fr; }
 }
 
 /* ──────────────────────────────────────────────────────
