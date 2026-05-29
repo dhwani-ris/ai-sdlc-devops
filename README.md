@@ -2,7 +2,7 @@
 
 The **DevOps vertical's input** for the AI-SDLC closing sessions at Dhwani RIS.
 
-> Live site: **https://dhwani-ankit.github.io/ai-sdlc-devops/**
+> Live site: **https://dhwani-ris.github.io/ai-sdlc-devops/**
 
 ## What this is
 
